@@ -32,17 +32,18 @@ class Vampire {
 
   // Returns true if this vampire is more senior than the other vampire. (Who is closer to the original vampire)
   isMoreSeniorThan(vampire) {
-    // if (!this.creator || !vampire.creator){
-    //   return true;
-    // } else if (this.creator || vampire.creator){
-    //   return false;
-    // }
-
-    if (this.creator && (vampire.creator === null || !vampire.creator)){
+    // Returns true if this vampire is more senior than the other vampire. (Who is closer to the original vampire)
+    if (this.numberOfVampiresFromOriginal < vampire.numberOfVampiresFromOriginal) {
+      return true
+    } else if (this.numberOfVampiresFromOriginal === this.numberOfVampiresFromOriginal) {
       return false;
-    } else if (this.creator === null || this.creator){
-      return true;
     }
+
+    // if (this.creator && vampire.creator === null){
+    //   return false;
+    // } else if (this.creator === null || this.creator){
+    //   return true;
+    // }
   }
 
   /** Stretch **/
